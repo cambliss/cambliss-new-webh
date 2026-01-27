@@ -1,0 +1,960 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Careers - Explore Opportunities with Cambliss Studio</title>
+   <meta name="description" content="Join the Cambliss Studio team and shape the future of digital innovation.">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png"> -->
+   <link rel="stylesheet" href="assets/css/preloader.css">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/meanmenu.css">
+   <link rel="stylesheet" href="assets/css/animate.min.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/ui-range-slider.css">
+   <link rel="stylesheet" href="assets/css/flaticon_faime.css">
+   <link rel="stylesheet" href="assets/css/all.min.css">
+   <link rel="stylesheet" href="assets/css/default.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+   <style>
+      :root {
+         --careers-accent: #f5b400;
+         --careers-card-bg: rgba(255, 255, 255, 0.04);
+         --careers-card-border: rgba(255, 255, 255, 0.12);
+      }
+
+      body {
+         background-color: #000;
+         color: #fff;
+      }
+
+      body a {
+         color: #fff;
+      }
+
+      body a:hover {
+         color: var(--careers-accent);
+      }
+
+      main,
+      header,
+      footer,
+      .fm-header-sidebar-area,
+      .fm-header-sidebar-wrapper,
+      .careers-hero-area,
+      .careers-values-area,
+      .careers-roles-area,
+      .contact-top-area,
+      .fm-contact-wrapper,
+      .footer-area-5,
+      .footer-middle-area,
+      .footer-bottom-4,
+      .footer-rules,
+      .footer-2-link,
+      .mouseCursor,
+      .loader,
+      .fm-header-area.header-border.transparent-header,
+      .adjust-header-space {
+         background-color: #000 !important;
+      }
+
+      body h1,
+      body h2,
+      body h3,
+      body h4,
+      body h5,
+      body h6,
+      body p,
+      body li,
+      body span,
+      body label,
+      body strong,
+      body .section-subtitle,
+      body .section-main-title,
+      body .case-subtitle,
+      body .case-subtitle span,
+      body .fm-contact-wrapper p,
+      body .fm-contact-wrapper span,
+      body .footer-title h4,
+      body .footer-2-link a,
+      body .footer-info p,
+      body .footer-rules a,
+      body .footer-copyright p {
+         color: #fff !important;
+      }
+
+      .careers-hero-text h1,
+      .careers-values-area .section-main-title,
+      .careers-values-copy h2,
+      .careers-roles-area .section-main-title,
+      .contact-top-area .section-main-title,
+      .careers-role-card h3,
+      .careers-values-card h4,
+      .modal-title,
+      .careers-values-card strong {
+         color: var(--careers-accent) !important;
+      }
+
+      .footer-area-5 .footer-bg-3 {
+         background: #000 !important;
+      }
+
+      .careers-hero-area {
+         padding-top: 120px;
+         padding-bottom: 60px;
+      }
+
+      .careers-hero-text {
+         max-width: 520px;
+      }
+
+      .careers-hero-text h1 {
+         font-size: 52px;
+         line-height: 1.1;
+         margin-bottom: 25px;
+      }
+
+      .careers-hero-text p {
+         font-size: 18px;
+         line-height: 1.5;
+      }
+
+      .careers-hero-img img {
+         width: 100%;
+         border-radius: 24px;
+         object-fit: cover;
+      }
+
+      .careers-values-area {
+         padding-top: 40px;
+         padding-bottom: 60px;
+      }
+
+      .careers-values-wrapper {
+         display: grid;
+         grid-template-columns: repeat(2, minmax(0, 1fr));
+         gap: 50px;
+         align-items: stretch;
+      }
+
+      .careers-values-grid {
+         display: grid;
+         grid-template-columns: repeat(2, minmax(240px, 1fr));
+         gap: 22px;
+      }
+
+      .careers-values-card {
+         display: flex;
+         align-items: flex-start;
+         gap: 16px;
+         padding: 28px 26px;
+         border-radius: 18px;
+         background: var(--careers-card-bg);
+         border: 1px solid var(--careers-card-border);
+         box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .careers-values-card:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 180, 0, 0.18);
+      }
+
+      .careers-values-icon {
+         width: 48px;
+         height: 48px;
+         border-radius: 16px;
+         display: grid;
+         place-items: center;
+         background: linear-gradient(135deg, rgba(245, 180, 0, 0.18), rgba(245, 180, 0, 0.05));
+         border: 1px solid rgba(245, 180, 0, 0.35);
+         color: var(--careers-accent);
+         font-size: 24px;
+         flex-shrink: 0;
+      }
+
+      .careers-values-card h4 {
+         font-size: 20px;
+         margin-bottom: 6px;
+      }
+
+      .careers-values-card p {
+         margin: 0;
+         color: rgba(255, 255, 255, 0.8) !important;
+      }
+
+      .careers-values-copy {
+         max-width: 520px;
+         margin-left: auto;
+      }
+
+      .careers-values-copy p {
+         font-size: 18px;
+         line-height: 1.6;
+         color: rgba(255, 255, 255, 0.85) !important;
+      }
+
+      .careers-roles-area {
+         padding-top: 60px;
+         padding-bottom: 80px;
+      }
+
+      .careers-roles-list {
+         display: flex;
+         flex-direction: column;
+         gap: 30px;
+      }
+
+      .careers-role-card {
+         position: relative;
+         background: rgba(0, 0, 0, 0.65);
+         border: 1px solid rgba(255, 255, 255, 0.12);
+         border-left: 4px solid var(--careers-accent);
+         border-radius: 20px;
+         padding: 34px 38px;
+         display: flex;
+         gap: 32px;
+         align-items: center;
+         transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      }
+
+      .careers-role-card:hover {
+         transform: translateY(-8px);
+         box-shadow: 0 28px 60px rgba(0, 0, 0, 0.55), 0 0 30px rgba(245, 180, 0, 0.2);
+         border-color: rgba(245, 180, 0, 0.65);
+      }
+
+      .careers-role-card-content {
+         flex: 1;
+      }
+
+      .careers-role-card h3 {
+         font-size: 26px;
+         margin-bottom: 12px;
+      }
+
+      .careers-role-card p {
+         margin: 0 0 12px 0;
+         font-size: 18px;
+         line-height: 1.55;
+         color: rgba(255, 255, 255, 0.8) !important;
+      }
+
+      .careers-role-card p:last-of-type {
+         margin-bottom: 0;
+      }
+
+      .careers-role-card-cta {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-end;
+         gap: 14px;
+      }
+
+      .careers-apply-btn {
+         display: inline-flex;
+         align-items: center;
+         gap: 10px;
+         padding: 12px 28px;
+         border-radius: 0px;
+         background: linear-gradient(135deg, #ffd55f, var(--careers-accent));
+         color: #000 !important;
+         font-weight: 600;
+         text-transform: uppercase;
+         letter-spacing: 0.05em;
+         border: 0;
+         /* box-shadow: 0 12px 25px rgba(245, 180, 0, 0.35); */
+      }
+
+      .careers-apply-btn i {
+         font-size: 16px;
+      }
+
+      .modal-content {
+         background: radial-gradient(circle at top left, rgba(245, 180, 0, 0.12), transparent 50%), #070707;
+         color: #fff;
+         border-radius: 24px;
+         border: 1px solid rgba(245, 180, 0, 0.35);
+         box-shadow: 0 32px 90px rgba(0, 0, 0, 0.7), 0 0 40px rgba(245, 180, 0, 0.18);
+      }
+
+      .modal-header {
+         border-bottom: 1px solid rgba(245, 180, 0, 0.25);
+         padding: 22px 28px;
+         background: linear-gradient(135deg, rgba(245, 180, 0, 0.18), rgba(245, 180, 0, 0.05));
+      }
+
+      .modal-body {
+         padding: 28px;
+      }
+
+      .btn-close {
+         filter: invert(1);
+         opacity: 0.7;
+      }
+
+      .btn-close:hover {
+         opacity: 1;
+      }
+
+      .form-control,
+      .form-select {
+         background-color: #111;
+         border: 1px solid rgba(255, 255, 255, 0.1);
+         color: #fff;
+      }
+
+      .form-control:focus,
+      .form-select:focus {
+         background-color: #111;
+         color: #fff;
+         border-color: var(--careers-accent);
+         box-shadow: none;
+      }
+
+      .modal-content .fill-btn {
+         background: linear-gradient(135deg, #ffd55f, var(--careers-accent));
+         color: #000 !important;
+         border: 0;
+         font-weight: 600;
+         letter-spacing: 0.04em;
+         padding: 16px 20px;
+         border-radius: 999px;
+         box-shadow: 0 15px 30px rgba(245, 180, 0, 0.32);
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .modal-content .fill-btn:hover {
+         transform: translateY(-3px);
+         box-shadow: 0 22px 40px rgba(245, 180, 0, 0.38);
+         color: #000 !important;
+      }
+
+      .invalid-feedback {
+         color: rgba(255, 255, 255, 0.65);
+      }
+
+      @media (max-width: 1199px) {
+         .careers-hero-text h1 {
+            font-size: 44px;
+         }
+      }
+
+      @media (max-width: 991px) {
+         .careers-hero-area {
+            padding-top: 100px;
+         }
+
+         .careers-values-wrapper {
+            grid-template-columns: 1fr;
+         }
+
+         .careers-values-copy {
+            margin-left: 0;
+         }
+
+         .careers-values-grid {
+            grid-template-columns: repeat(2, minmax(220px, 1fr));
+         }
+
+         .careers-hero-text {
+            margin-bottom: 40px;
+         }
+
+         .careers-role-card {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 28px;
+            gap: 24px;
+         }
+
+         .careers-role-card-cta {
+            align-items: flex-start;
+            width: 100%;
+         }
+      }
+
+      @media (max-width: 767px) {
+         .careers-values-grid {
+            grid-template-columns: 1fr;
+         }
+      }
+
+      @media (max-width: 575px) {
+         .careers-hero-text h1 {
+            font-size: 34px;
+         }
+
+         .careers-role-card {
+            padding: 24px;
+         }
+
+         .careers-apply-btn {
+            width: 100%;
+            justify-content: center;
+         }
+      }
+   </style>
+</head>
+
+<body>
+
+   <div class="mouseCursor cursor-outer"></div>
+   <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+   <button id="scroll_top" class="scroll-top">
+      <i class="fa-solid fa-arrow-up"></i>
+   </button>
+
+   <div class="loader">
+      <div class="loader__container">
+         <!-- <div class="loader__film">
+            <img class="loader__film-img" src="assets/img/loader/film.png" alt="img not found">
+            <img class="loader__film-img" src="assets/img/loader/film-2.png" alt="img not found">
+         </div> -->
+         <img class="loader__camera" src="assets/img/loader/camblisspreloader4.webp" alt="img not found" style="height: 120px !important;">
+      </div>
+   </div>
+
+  <!-- header area start -->
+   <header id="header-sticky" class="fm-header-area header-border transparent-header">
+      <div class="container">
+         <div class="row align-items-center justify-content-lg-between">
+            <div class="header-wrapper">
+               <div class="fm-header-logo-wrapper">
+                  <a href="index.html" class="fm-header-logo">
+                     <img src="assets/img/logo/camblisslogo.webp" alt="img not found">
+                  </a>
+
+                  <span class="separator d-none d-xl-block"></span>
+                  <a href="#0" class="fm-header-bar-1">
+                     <span class="fm-header-bar-line fm-header-bar-line-1"></span>
+                     <span class="fm-header-bar-line fm-header-bar-line-2"></span>
+                     <span class="fm-header-bar-line fm-header-bar-line-3"></span>
+                  </a>
+               </div>
+               <div class="header-menu-spc d-none d-xl-block">
+                  <div class="fm-header-nav">
+
+                     <nav id="mobile-menu">
+                        <ul>
+                           <li class="active has-dropdown">
+                              <a href="index.html">Home</a>
+                              <!-- <ul class="submenu">
+                                 <li><a href="index.html">Movie Director</a></li>
+                                 <li><a href="index-2.html">Filming Works</a></li>
+                                 <li><a href="movie-film.html">Movie and Film</a></li>
+                                 <li><a href="filming-history.html">Filming History</a></li>
+                                 <li><a href="popular-movies.html">Popular Movies</a></li>
+                              </ul> -->
+                           </li>
+
+
+                           <li class="has-dropdown"><a href="about-cambliss.html">About us</a>
+                              <!-- <ul class="submenu">
+                                 <li><a href="movie.html">Movie</a></li>
+                                 <li><a href="movie-details.html">Movie Details</a></li>
+                              </ul> -->
+                           </li>
+
+                           <li class="has-dropdown"><a href="Services-cambliss.html">Services</a>
+                              <!-- <ul class="submenu">
+                                 <li><a href="portfolio-masonary.html">Masonary</a></li>
+                                 <li><a href="portfolio-slider.html">Slider</a></li>
+                                 <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                              </ul> -->
+                           </li>
+
+                           <li class="has-dropdown has-mega-menu">
+                              <a href="gallery.html">Gallery</a>
+                              <!-- <ul class="mega-menu">
+                                 <li><a href="javasript:void(0);" class="mega-menu-title">Page Layout 1</a>
+                                    <ul>
+                                       <li> <a href="about-cambliss.html">About us</a></li>
+                                       <li><a href="service.html">Service</a></li>
+                                       <li><a href="service-details.html">Service Details</a></li>
+                                       <li><a href="team.html">Team</a></li>
+                                       <li><a href="team-details.html">Team Details</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="javasript:void(0);" class="mega-menu-title">Page Layout 2</a>
+                                    <ul>
+                                       <li><a href="faq.html">FAQ's</a></li>
+                                       <li><a href="pricing.html">Pricing</a></li>
+                                       <li><a href="cart.html">Cart</a></li>
+                                       <li><a href="contact.html">Contact Us</a></li>
+                                       <li><a href="404.html">404</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="javasript:void(0);" class="mega-menu-title">Page Layout 3</a>
+                                    <ul>
+                                       <li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+                                       <li><a href="shop-4.html">Shop 4 Column</a></li>
+                                       <li><a href="shop-details.html">Shop Details</a></li>
+                                       <li><a href="blog.html">Blog Standard</a></li>
+                                       <li><a href="blog-details.html">Blog Details</a></li>
+                                    </ul>
+                                 </li>
+                              </ul> -->
+                           </li>
+
+                           <li class="has-dropdown"><a href="careers.html">Careers</a>
+                                                         <li class="has-dropdown"><a href="products.html">Products
+
+                           </a>
+                              <!-- <ul class="submenu">
+                                 <li><a href="blog.html">Blog Standard </a></li>
+                                 <li><a href="blog-wide.html">Blog Wide</a></li>
+                                 <li><a href="blog-details.html">Blog Details</a></li>
+                              </ul> -->
+                           </li>
+
+
+                           <li class="has-dropdown"><a href="contact.html">Contact</a>
+                           </li>
+                        </ul>
+                     </nav>
+
+                  </div>
+               </div>
+               <div class="fm-header-right d-none d-xl-block">
+                  <a href="https://camblisstech.com/login" class="fill-btn" target="_blank">Login Now
+                     <span>
+                        <i class="fa-regular fa-arrow-right"></i>
+                     </span>
+                  </a>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </header>
+   <!-- header area end -->
+   <div class="fm-header-sidebar-area fm-header-sidebar-left">
+      <div class="fm-header-sidebar-wrapper">
+         <div class="fm-header-sidebar-action mb-65">
+            <div class="fm-header-sidebar-logo">
+               <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo not found"></a>
+            </div>
+            <div class="offcanvas-close">
+               <a class="offcanvas-btn" href="#0">
+                  <i class="fa-thin fa-times"></i>
+               </a>
+            </div>
+         </div>
+         <div class="d-none d-sm-block">
+            <div class="fm-header-sidebar-search">
+               <form action="index.html">
+                  <input type="text" placeholder="Search here">
+                  <button type="submit"><i class="flaticon flaticon-search"></i></button>
+               </form>
+            </div>
+         </div>
+         <div class="mobile-menu"></div>
+         <div class="d-none d-sm-block">
+            <div class="fm-offcanvas-about mt-30 mb-30">
+               <h4>About Faime</h4>
+               <p>We believe film and moving image have the power to create significant change.</p>
+            </div>
+         </div>
+         <div class="offcanvas-contact mt-30 mb-30">
+            <h4 class="offcanvas-contact-title">Contact Information</h4>
+            <ul>
+               <li class="d-flex align-items-center gap-2">
+                  <div class="offcanvas-contact-icon">
+                     <a target="_blank"
+                        href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">
+                        <i class="fal fa-map-marker-alt"></i></a>
+                  </div>
+                  <div class="offcanvas-contact-text">
+                     <a target="_blank"
+                        href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
+                        Broadway, NY 10013 Bournemouth</a>
+                  </div>
+               </li>
+               <li class="d-flex align-items-center gap-2">
+                  <div class="offcanvas-contact-icon">
+                     <a href="tel:+088889797697"><i class="far fa-phone"></i></a>
+                  </div>
+                  <div class="offcanvas-contact-text">
+                     <a href="tel:915550303420">+91 555 0303 420</a>
+                  </div>
+               </li>
+               <li class="d-flex align-items-center gap-2">
+                  <div class="offcanvas-contact-icon">
+                     <a href="mailto:support@gmail.com"><i class="fal fa-envelope"></i></a>
+                  </div>
+                  <div class="offcanvas-contact-text">
+                     <a href="mailto:hello@faimemedia.com">hello@faimemedia.com</a>
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <div class="d-none d-sm-block d-sm-none d-md-block">
+            <div class="fm-offcanvas-social">
+               <span class="social-text">Follow :</span>
+               <div class="fm-offcanvas-social-icon">
+                  <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="overlay"></div>
+
+   <main>
+      <!-- <div class="adjust-header-space bg-common-black"></div> -->
+
+      <section class="careers-hero-area">
+         <div class="container">
+            <div class="row align-items-center g-5">
+               <div class="col-lg-6">
+                  <div class="careers-hero-text">
+                     <span class="section-subtitle featured-sub-title">We Are Hiring</span>
+                     <h1>Join Our Team and Shape the Future of Digital Innovation</h1>
+                     <p>We are looking for talented individuals who are passionate about innovation and growth. Apply today and be part of something extraordinary.</p>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="careers-hero-img">
+                     <img src="assets/img/services/hiring.webp" alt="Team brainstorming in studio">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section class="careers-values-area">
+         <div class="container">
+            <div class="careers-values-wrapper">
+               <div>
+                  <span class="section-subtitle featured-sub-title">Our Values</span>
+                  <div class="careers-values-grid">
+                     <div class="careers-values-card">
+                        <div class="careers-values-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div>
+                           <h4>Innovation</h4>
+                           <p>We embrace creativity to deliver groundbreaking solutions.</p>
+                        </div>
+                     </div>
+                     <div class="careers-values-card">
+                        <div class="careers-values-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <div>
+                           <h4>Growth</h4>
+                           <p>Empowering our team to reach new heights.</p>
+                        </div>
+                     </div>
+                     <div class="careers-values-card">
+                        <div class="careers-values-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <div>
+                           <h4>Team Spirit</h4>
+                           <p>Collaboration is the key to our success.</p>
+                        </div>
+                     </div>
+                     <div class="careers-values-card">
+                        <div class="careers-values-icon"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                           <h4>Diversity</h4>
+                           <p>Inclusive culture with global perspectives.</p>
+                        </div>
+                     </div>
+                     <div class="careers-values-card">
+                        <div class="careers-values-icon"><i class="fa-solid fa-star"></i></div>
+                        <div>
+                           <h4>Excellence</h4>
+                           <p>Striving for excellence in everything we do.</p>
+                        </div>
+                     </div>
+                     <div class="careers-values-card">
+                        <div class="careers-values-icon"><i class="fa-solid fa-globe"></i></div>
+                        <div>
+                           <h4>Global Impact</h4>
+                           <p>Making a difference worldwide.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="careers-values-copy">
+                  <span class="section-subtitle featured-sub-title">Our Culture</span>
+                  <h2 class="section-main-title">Why Cambliss Studio?</h2>
+                  <p>At Cambliss Studio, we are more than just a workplace - we are a community of innovators, dreamers, and creators. Our mission is to inspire and empower our team to build exceptional solutions that make a global impact.</p>
+                  <p>Join us to work on cutting-edge projects, embrace a culture of diversity and inclusion, and thrive in an environment that celebrates creativity and growth. Together, let's create a brighter future.</p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section class="careers-roles-area">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-lg-8 text-center">
+                  <div class="section-title mb-40">
+                     <span class="section-subtitle featured-sub-title">Open Positions</span>
+                     <h2 class="section-main-title">Build Your Career With Cambliss Studio</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="careers-roles-list">
+               <div class="careers-role-card">
+                  <div class="careers-role-card-content">
+                     <h3>Full Stack Developer</h3>
+                     <p>Create resilient digital experiences across web and mobile platforms while collaborating with designers, strategists, and producers.</p>
+                     <p>Ship modular frontends, scalable APIs, and secure integrations using modern JS frameworks and cloud-native services. Champion code reviews, accessibility, automated testing, and continuous delivery best practices.</p>
+                  </div>
+                  <div class="careers-role-card-cta">
+                     <button class="careers-apply-btn" data-bs-toggle="modal" data-bs-target="#careerApplyModal" data-role="Full Stack Developer">
+                        Apply Now
+                        <i class="fa-regular fa-arrow-right"></i>
+                     </button>
+                  </div>
+               </div>
+               <div class="careers-role-card">
+                  <div class="careers-role-card-content">
+                     <h3>Network Engineer</h3>
+                     <p>Design and maintain secure infrastructure that powers global content delivery, live events, and high-availability media workflows.</p>
+                     <p>Deploy redundant network architectures, monitor performance, and harden perimeter defenses across hybrid cloud environments. Partner with production teams to ensure low-latency streaming, rapid incident response, and continuous uptime.</p>
+                  </div>
+                  <div class="careers-role-card-cta">
+                     <button class="careers-apply-btn" data-bs-toggle="modal" data-bs-target="#careerApplyModal" data-role="Network Engineer">
+                        Apply Now
+                        <i class="fa-regular fa-arrow-right"></i>
+                     </button>
+                  </div>
+               </div>
+               <div class="careers-role-card">
+                  <div class="careers-role-card-content">
+                     <h3>PHP Developer</h3>
+                     <p>Build scalable backend services, integrate APIs, and optimize performance for our next generation of content platforms.</p>
+                     <p>Leverage Laravel and headless CMS workflows to deliver feature-rich experiences, automate deployments, and maintain clean data contracts. Collaborate with DevOps and QA engineers to improve observability, security, and throughput.</p>
+                  </div>
+                  <div class="careers-role-card-cta">
+                     <button class="careers-apply-btn" data-bs-toggle="modal" data-bs-target="#careerApplyModal" data-role="PHP Developer">
+                        Apply Now
+                        <i class="fa-regular fa-arrow-right"></i>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section class="contact-top-area bg-common-black">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <div class="fm-contact-wrapper fm-contact-pad border-0">
+                     <div class="section-title title-anim">
+                        <span class="section-subtitle featured-sub-title">Ready To Join?</span>
+                        <h2 class="section-main-title fw-400 mb-15" style="color: #fff !important;">Let's Build the Future Together</h2>
+                        <h2 class="section-main-title" style="color: #fff !important;">Apply Today</h2>
+                     </div>
+
+                     <div class="fm-contact-btn btn_wrapper">
+                        <a href="#careerApplyModal" class="blog-rotate-btn is-white large btn__item-move" data-bs-toggle="modal" data-role="General Application">
+                           <span>
+                              <i class="flaticon-right-arrow-1"></i>
+                           </span>
+                        </a>
+                     </div>
+
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+   </main>
+
+   <div class="modal fade" id="careerApplyModal" tabindex="-1" aria-labelledby="careerApplyModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="careerApplyModalLabel">Apply to Cambliss Studio</h5>
+               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <form action="assets/mail.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                  <input type="hidden" name="subject" value="New Career Application">
+                  <input type="hidden" name="receiver" value="contact@camblissstudio.com">
+                  <input type="hidden" name="position" id="career-position-input" value="General Application">
+                  <div class="mb-3">
+                     <label for="career-name" class="form-label">Full Name</label>
+                     <input type="text" class="form-control" id="career-name" name="name" placeholder="Enter your name" required>
+                     <div class="invalid-feedback">Please enter your name.</div>
+                  </div>
+                  <div class="mb-3">
+                     <label for="career-email" class="form-label">Email Address</label>
+                     <input type="email" class="form-control" id="career-email" name="email" placeholder="Enter your email" required>
+                     <div class="invalid-feedback">Please enter a valid email.</div>
+                  </div>
+                  <div class="mb-3">
+                     <label for="career-phone" class="form-label">Phone Number</label>
+                     <input type="tel" class="form-control" id="career-phone" name="phone" placeholder="Enter your phone number" required>
+                     <div class="invalid-feedback">Please enter your phone number.</div>
+                  </div>
+                  <div class="mb-3">
+                     <label for="career-resume" class="form-label">Resume</label>
+                     <input type="file" class="form-control" id="career-resume" name="resume" accept=".pdf,.doc,.docx" required>
+                     <div class="invalid-feedback">Please upload your resume.</div>
+                  </div>
+                  <div class="mb-3">
+                     <label for="career-message" class="form-label">Cover Note (Optional)</label>
+                     <textarea class="form-control" id="career-message" name="message" rows="4" placeholder="Share why you are a great fit"></textarea>
+                  </div>
+                  <button type="submit" class="fill-btn w-100">Submit Application</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <footer>
+      <div class="footer-area-5 section-spacing-top pos-rel">
+         <div class="footer-bg-3" data-background="assets/img/bg/footer-image-cambliss.png">
+
+         </div>
+         <div class="container">
+            <div class="footer-middle-area">
+
+               <div class="footer-wrapper footer-widget-about">
+                  <div class="footer-logo-2">
+                     <a href="index.html"><img src="assets/img/logo/camblisslogo.webp" alt="" style="width: 180px;"></a>
+                  </div>
+                  <ul class="footer-2-link" style="list-style: none; padding: 0;">
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="about.html">About us</a></li>
+                     <li><a href="service.html">Services</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                  </ul>
+               </div>
+               <div class="footer-wrapper footer-widget-gallery">
+                  <div class="footer-title">
+                     <h4>Other Links</h4>
+                  </div>
+                  <ul class="footer-2-link" style="list-style: none; padding: 0;">
+                     <li><a href="portfolio-masonary.html">Gallery</a></li>
+                     <li><a href="#">Careers</a></li>
+                     <li><a href="shop-4.html">Shop</a></li>
+                  </ul>
+               </div>
+               <div class="footer-wrapper footer-widget-social">
+                  <div class="footer-title">
+                     <h4>Follow Me</h4>
+                  </div>
+                  <div class="footer-info">
+                     <p>Connect with us on social media</p>
+                  </div>
+                  <div class="fm-social-2 footer-social-3">
+                     <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                     <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                     <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                     <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                  </div>
+               </div>
+               <div class="footer-wrapper footer-widget-contact">
+                  <div class="footer-title">
+                     <h4>Contact Us</h4>
+                  </div>
+                  <ul class="footer-2-link">
+                     <li>
+                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                        <p><a target="_blank"
+                              href="https://www.google.com/maps/place/Survey+No:+75/2,+Balapur(V),+Hyderabad,+Telangana,+500005">Survey No: 75/2, Balapur(V), Hyderabad, Telangana, 500005</a></p>
+                     </li>
+                     <li>
+                        <i class="fa-sharp fa-solid fa-phone"></i>
+                        <p><a href="tel:+918005719799">1800 571 9799</a></p>
+                     </li>
+                     <li>
+                        <i class="fa-sharp fa-solid fa-envelope"></i>
+                        <p><a href="mailto:contact@camblissstudio.com">contact@camblissstudio.com</a></p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer-bottom-4">
+               <div class="footer-bottom-wrapper-2 ">
+                  <div class="footer-bottom-inner">
+                     <div class="footer-copyright">
+                        <p>© 2025 <a href="index.html">CAMBLISS</a> All Rights Reserved.</p>
+                        <p style="margin-top: 5px; font-size: 14px;">CIN : U32100TG2018PTC128985</p>
+                     </div>
+
+
+                     <div class="footer-rules ">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Quality Control</a>
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Refunds and Cancellations</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <script src="assets/js/jquery-3.6.0.min.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/swiper-bundle.min.js"></script>
+   <script src="assets/js/slick.min.js"></script>
+   <script src="assets/js/magnific-popup.min.js"></script>
+   <script src="assets/js/parallax.min.js"></script>
+   <script src="assets/js/gsap.min.js"></script>
+   <script src="assets/js/ScrollTrigger.min.js"></script>
+   <script src="assets/js/ScrollToPlugin.min.js"></script>
+   <script src="assets/js/SplitText.min.js"></script>
+   <script src="assets/js/vanilla-tils.js"></script>
+   <script src="assets/js/knob.min.js"></script>
+   <script src="assets/js/nice-select.min.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/wow.min.js"></script>
+   <script src="assets/js/sidebar.js"></script>
+   <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+   <script src="assets/js/isotope.pkgd.min.js"></script>
+   <script src="assets/js/fontawesome.min.js"></script>
+   <script src="assets/js/ui-range-slider.js"></script>
+   <script src="assets/js/main.js"></script>
+   <script>
+      (function () {
+         const modal = document.getElementById('careerApplyModal');
+         if (modal) {
+            modal.addEventListener('show.bs.modal', function (event) {
+               const trigger = event.relatedTarget;
+               const position = trigger && trigger.getAttribute('data-role') ? trigger.getAttribute('data-role') : 'General Application';
+               const positionField = document.getElementById('career-position-input');
+               const modalTitle = document.getElementById('careerApplyModalLabel');
+               if (positionField) {
+                  positionField.value = position;
+               }
+               if (modalTitle) {
+                  modalTitle.textContent = 'Apply for ' + position;
+               }
+            });
+         }
+
+         const forms = document.querySelectorAll('.needs-validation');
+         forms.forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+               if (!form.checkValidity()) {
+                  event.preventDefault();
+                  event.stopPropagation();
+               }
+               form.classList.add('was-validated');
+            }, false);
+         });
+      })();
+   </script>
+</body>
+
+</html>

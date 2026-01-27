@@ -1,0 +1,1139 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Products - Cambliss Studio</title>
+   <meta name="description" content="Discover Cambliss Studio's signature lineup with premium 3D presentation.">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png"> -->
+   <link rel="stylesheet" href="assets/css/preloader.css">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/meanmenu.css">
+   <link rel="stylesheet" href="assets/css/animate.min.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/ui-range-slider.css">
+   <link rel="stylesheet" href="assets/css/flaticon_faime.css">
+   <link rel="stylesheet" href="assets/css/all.min.css">
+   <link rel="stylesheet" href="assets/css/default.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+   <style>
+      body {
+         background-color: #000000;
+         color: #fff;
+      }
+
+      body a {
+         color: inherit;
+      }
+      .products-showcase {
+         padding: 80px 0 120px;
+      }
+
+      .product-showcase-list {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         gap: 50px 40px;
+         perspective: 1600px;
+      }
+
+      .product-showcase {
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         background: rgba(255, 255, 255, 0.02);
+         border: 1px solid rgba(255, 255, 255, 0.05);
+         border-radius: 10px;
+         overflow: hidden;
+         transition: all 0.4s ease;
+      }
+
+      .product-showcase:hover {
+         transform: translateY(-10px);
+         border-color: rgba(255, 189, 57, 0.3);
+         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+
+      .product-details {
+         padding: 25px;
+         display: flex;
+         flex-direction: column;
+      }
+
+      .product-details h3 {
+         font-size: 28px;
+         font-weight: 600;
+         color: #ffbd39;
+         margin-bottom: 12px;
+         letter-spacing: -0.01em;
+      }
+
+      .product-details p {
+         color: rgba(255, 255, 255, 0.72) !important;
+         font-size: 15px;
+         line-height: 1.6;
+         margin-bottom: 20px;
+         flex-grow: 1;
+      }
+
+      .product-meta {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 8px;
+         margin: 16px 0;
+         color: rgba(255, 255, 255, 0.55);
+         font-size: 11px;
+         letter-spacing: 0.08em;
+         text-transform: uppercase;
+      }
+
+      .product-meta span {
+         padding: 4px 10px;
+         background: rgba(255, 255, 255, 0.05);
+         border-radius: 4px;
+      }
+
+      .product-specs {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 8px;
+         margin-bottom: 20px;
+      }
+
+      .product-specs span {
+         font-size: 11px;
+         letter-spacing: 0.08em;
+         text-transform: uppercase;
+         color: rgba(255, 255, 255, 0.6);
+         padding: 4px 10px;
+         background: rgba(255, 255, 255, 0.05);
+         border-radius: 4px;
+      }
+
+      .product-cta {
+         display: none;
+      }
+
+      .product-price {
+         font-size: 24px;
+         font-weight: 600;
+         color: #fff;
+      }
+
+      .product-btn {
+         display: inline-flex;
+         align-items: center;
+         gap: 8px;
+         padding: 0 20px;
+         height: 42px;
+         border-radius: 0;
+         background: #ffbd39;
+         color: #000 !important;
+         font-weight: 500;
+         border: 1px solid #ffbd39;
+         text-transform: none;
+         letter-spacing: 0;
+         font-size: 14px;
+         transition: all 0.3s ease;
+      }
+
+      .product-btn:hover {
+         background: #fff;
+         border-color: #fff;
+      }
+
+      .product-btn i {
+         font-size: 14px;
+      }
+
+      .product-badge {
+         display: inline-flex;
+         align-items: center;
+         gap: 6px;
+         padding: 5px 10px;
+         border-radius: 5px;
+         border: 1px solid rgba(255, 189, 57, 0.45);
+         color: #ffbd39;
+         font-size: 10px;
+         text-transform: uppercase;
+         letter-spacing: 0.08em;
+         margin-bottom: 12px;
+         width: fit-content;
+      }
+
+      .product-stage {
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         min-height: 400px;
+         padding: 0;
+         background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(7, 7, 9, 0.95));
+         overflow: hidden;
+      }
+
+      .product-stage::before {
+         content: "";
+         position: absolute;
+         inset: 0;
+         background: radial-gradient(circle at center, rgba(255, 189, 57, 0.15), transparent 70%);
+         opacity: 0;
+         transition: opacity 0.4s ease;
+      }
+
+      .product-showcase:hover .product-stage::before {
+         opacity: 1;
+      }
+
+      .product-stage img {
+         position: relative;
+         width: 100%;
+         height: 100%;
+         max-height: 450px;
+         object-fit: contain;
+         transition: transform 0.4s ease;
+         filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
+      }
+
+      .product-showcase:hover .product-stage img {
+         transform: scale(1.05) translateY(-5px);
+      }
+
+      @media (max-width: 1199px) {
+         .products-hero .section-main-title {
+            font-size: 54px;
+         }
+      }
+
+      @media (max-width: 991px) {
+         .product-showcase-list {
+            grid-template-columns: 1fr;
+            gap: 40px;
+         }
+
+         .product-details h3 {
+            font-size: 26px;
+         }
+      }
+
+      @media (max-width: 575px) {
+         .products-showcase {
+            padding: 60px 0 80px;
+         }
+
+         .product-details {
+            padding: 20px;
+         }
+
+         .product-details h3 {
+            font-size: 24px;
+         }
+
+         .product-details p {
+            font-size: 14px;
+         }
+
+         .product-cta {
+            flex-direction: column;
+            align-items: stretch;
+         }
+
+         .product-btn {
+            width: 100%;
+            justify-content: center;
+         }
+      }
+
+      /* Full Width 3D Banner Section */
+      .products-hero-banner {
+         position: relative;
+         width: 100%;
+         height: 100vh;
+         min-height: 700px;
+         overflow: hidden;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         perspective: 1000px;
+      }
+
+      .products-hero-video {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         min-width: 100%;
+         min-height: 100%;
+         width: auto;
+         height: auto;
+         transform: translate(-50%, -50%);
+         z-index: 1;
+         object-fit: cover;
+      }
+
+      .products-hero-overlay {
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(3, 3, 3, 0.55) 50%, rgba(0, 0, 0, 0.85) 100%);
+         z-index: 2;
+      }
+
+      .products-hero-overlay::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background: radial-gradient(circle at center, transparent 30%, rgba(255, 189, 57, 0.08) 70%);
+         animation: pulseGlow 4s ease-in-out infinite;
+      }
+
+      @keyframes pulseGlow {
+         0%, 100% {
+            opacity: 0.5;
+         }
+         50% {
+            opacity: 1;
+         }
+      }
+
+      .products-hero-content {
+         position: relative;
+         z-index: 3;
+         text-align: center;
+         max-width: 1100px;
+         padding: 0 20px;
+         transform-style: preserve-3d;
+         animation: fadeInUp 1.2s ease-out;
+      }
+
+      @keyframes fadeInUp {
+         from {
+            opacity: 0;
+            transform: translateY(50px) translateZ(0);
+         }
+         to {
+            opacity: 1;
+            transform: translateY(0) translateZ(50px);
+         }
+      }
+
+      .products-hero-badge {
+         display: inline-block;
+         padding: 10px 24px;
+         margin-bottom: 30px;
+         background: rgba(255, 255, 255, 0.1);
+         backdrop-filter: blur(10px);
+         border: 1px solid rgba(255, 189, 57, 0.3);
+         border-radius: 50px;
+         color: #ffbd39;
+         font-size: 16px;
+         font-weight: 500;
+         text-transform: none;
+         letter-spacing: 4.16px;
+         animation: slideInDown 1s ease-out 0.3s both;
+      }
+
+      @keyframes slideInDown {
+         from {
+            opacity: 0;
+            transform: translateY(-30px);
+         }
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+
+      .products-hero-title {
+         font-size: 70px;
+         font-weight: 700;
+         line-height: 1.2;
+         margin-bottom: 30px;
+         color: #fff;
+         text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+         letter-spacing: -0.02em;
+         animation: scaleIn 1s ease-out 0.5s both;
+      }
+
+      @keyframes scaleIn {
+         from {
+            opacity: 0;
+            transform: scale(0.9);
+         }
+         to {
+            opacity: 1;
+            transform: scale(1);
+         }
+      }
+
+      .products-hero-title span {
+         color: #ffbd39;
+      }
+
+      .products-hero-subtitle {
+         font-size: 18px;
+         line-height: 1.7;
+         color: #b4b4b4;
+         max-width: 720px;
+         margin: 0 auto 45px;
+         font-weight: 400;
+         animation: fadeIn 1.2s ease-out 0.7s both;
+      }
+
+      @keyframes fadeIn {
+         from {
+            opacity: 0;
+         }
+         to {
+            opacity: 1;
+         }
+      }
+
+      .products-hero-cta {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 20px;
+         flex-wrap: wrap;
+         animation: fadeInUp 1.2s ease-out 0.9s both;
+      }
+
+      .products-hero-btn {
+         display: inline-flex;
+         align-items: center;
+         gap: 10px;
+         padding: 0 30px;
+         height: 50px;
+         border-radius: 0;
+         font-size: 16px;
+         font-weight: 500;
+         text-transform: none;
+         letter-spacing: 0;
+         transition: all 0.3s ease;
+         text-decoration: none;
+      }
+
+      .products-hero-btn.primary {
+         background: #ffbd39;
+         color: #000;
+         border: 1px solid #ffbd39;
+         box-shadow: none;
+      }
+
+      .products-hero-btn.primary:hover {
+         background: #fff;
+         color: #000;
+         transform: translateY(-2px);
+      }
+
+      .products-hero-btn.secondary {
+         background: rgba(255, 255, 255, 0.1);
+         backdrop-filter: blur(10px);
+         border: 2px solid rgba(255, 255, 255, 0.3);
+         color: #fff;
+      }
+
+      .products-hero-btn.secondary:hover {
+         background: rgba(255, 255, 255, 0.2);
+         border-color: rgba(255, 255, 255, 0.5);
+         transform: translateY(-4px);
+      }
+
+      .products-hero-scroll {
+         position: absolute;
+         bottom: 40px;
+         left: 50%;
+         transform: translateX(-50%);
+         z-index: 3;
+         animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+         0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+         }
+         40% {
+            transform: translateX(-50%) translateY(-10px);
+         }
+         60% {
+            transform: translateX(-50%) translateY(-5px);
+         }
+      }
+
+      .products-hero-scroll span {
+         display: block;
+         width: 30px;
+         height: 50px;
+         border: 2px solid rgba(255, 255, 255, 0.5);
+         border-radius: 25px;
+         position: relative;
+      }
+
+      .products-hero-scroll span::before {
+         content: "";
+         position: absolute;
+         top: 8px;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 4px;
+         height: 8px;
+         background: #ffbd39;
+         border-radius: 2px;
+         animation: scrollDown 2s infinite;
+      }
+
+      @keyframes scrollDown {
+         0% {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+         }
+         100% {
+            opacity: 0;
+            transform: translateX(-50%) translateY(20px);
+         }
+      }
+
+      @media (max-width: 1199px) {
+         .products-hero-title {
+            font-size: 54px;
+         }
+      }
+
+      @media (max-width: 991px) {
+         .products-hero-banner {
+            min-height: 600px;
+         }
+
+         .products-hero-title {
+            font-size: 46px;
+         }
+         
+         .products-hero-subtitle {
+            font-size: 18px;
+         }
+      }
+
+      @media (max-width: 767px) {
+         .products-hero-banner {
+            min-height: 550px;
+         }
+
+         .products-hero-title {
+            font-size: 42px;
+         }
+
+         .products-hero-subtitle {
+            font-size: 16px;
+         }
+
+         .products-hero-cta {
+            flex-direction: column;
+         }
+
+         .products-hero-btn {
+            width: 100%;
+            justify-content: center;
+         }
+      }
+
+      @media (max-width: 575px) {
+         .products-hero-title {
+            font-size: 36px;
+         }
+
+         .products-hero-badge {
+            font-size: 12px;
+            padding: 8px 20px;
+         }
+      }
+   </style>
+</head>
+
+<body>
+
+   <div class="mouseCursor cursor-outer"></div>
+   <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+   <button id="scroll_top" class="scroll-top">
+      <i class="fa-solid fa-arrow-up"></i>
+   </button>
+
+   <div class="loader">
+      <div class="loader__container">
+         <div class="loader__film">
+            <img class="loader__film-img" src="assets/img/loader/film.png" alt="img not found">
+            <img class="loader__film-img" src="assets/img/loader/film-2.png" alt="img not found">
+         </div>
+         <img class="loader__camera" src="assets/img/loader/camera.png" alt="img not found">
+      </div>
+   </div>
+
+   <header id="header-sticky" class="fm-header-area header-border transparent-header">
+      <div class="container">
+         <div class="row align-items-center justify-content-lg-between">
+            <div class="header-wrapper">
+               <div class="fm-header-logo-wrapper">
+                  <a href="index.html" class="fm-header-logo">
+                     <img src="assets/img/logo/camblisslogo.webp" alt="img not found">
+                  </a>
+
+                  <span class="separator d-none d-xl-block"></span>
+                  <a href="#0" class="fm-header-bar-1">
+                     <span class="fm-header-bar-line fm-header-bar-line-1"></span>
+                     <span class="fm-header-bar-line fm-header-bar-line-2"></span>
+                     <span class="fm-header-bar-line fm-header-bar-line-3"></span>
+                  </a>
+               </div>
+               <div class="header-menu-spc d-none d-xl-block">
+                  <div class="fm-header-nav">
+
+                     <nav id="mobile-menu">
+                        <ul>
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="about-cambliss.html">About us</a></li>
+                           <li><a href="Services-cambliss.html">Services</a></li>
+                           <li><a href="gallery.html">Gallery</a></li>
+                           <li><a href="careers.html">Careers</a></li>
+                           <li><a href="contact.html">Contact</a></li>
+                           <li><a href="products.html">Products</a></li>
+                           <li><a href="#">Login</a></li>
+                        </ul>
+                     </nav>
+
+                  </div>
+               </div>
+               <div class="fm-header-right d-none d-xl-block">
+                  <a href="contact.html" class="fill-btn">Login Now
+                     <span>
+                        <i class="fa-regular fa-arrow-right"></i>
+                     </span>
+                  </a>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </header>
+
+   <div class="fm-header-sidebar-area fm-header-sidebar-left">
+      <div class="fm-header-sidebar-wrapper">
+         <div class="fm-header-sidebar-action mb-65">
+            <div class="fm-header-sidebar-logo">
+               <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo not found"></a>
+            </div>
+            <div class="offcanvas-close">
+               <a class="offcanvas-btn" href="#0">
+                  <i class="fa-thin fa-times"></i>
+               </a>
+            </div>
+         </div>
+         <div class="d-none d-sm-block">
+            <div class="fm-header-sidebar-search">
+               <form action="index.html">
+                  <input type="text" placeholder="Search here">
+                  <button type="submit"><i class="flaticon flaticon-search"></i></button>
+               </form>
+            </div>
+         </div>
+         <div class="mobile-menu"></div>
+         <div class="d-none d-sm-block">
+            <div class="fm-offcanvas-about mt-30 mb-30">
+               <h4>About Faime</h4>
+               <p>We believe film and moving image have the power to create significant change.</p>
+            </div>
+         </div>
+         <div class="offcanvas-contact mt-30 mb-30">
+            <h4 class="offcanvas-contact-title">Contact Information</h4>
+            <ul>
+               <li class="d-flex align-items-center gap-2">
+                  <div class="offcanvas-contact-icon">
+                     <a target="_blank"
+                        href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">
+                        <i class="fal fa-map-marker-alt"></i></a>
+                  </div>
+                  <div class="offcanvas-contact-text">
+                     <a target="_blank"
+                        href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
+                        Broadway, NY 10013 Bournemouth</a>
+                  </div>
+               </li>
+               <li class="d-flex align-items-center gap-2">
+                  <div class="offcanvas-contact-icon">
+                     <a href="tel:+088889797697"><i class="far fa-phone"></i></a>
+                  </div>
+                  <div class="offcanvas-contact-text">
+                     <a href="tel:915550303420">+91 555 0303 420</a>
+                  </div>
+               </li>
+               <li class="d-flex align-items-center gap-2">
+                  <div class="offcanvas-contact-icon">
+                     <a href="mailto:support@gmail.com"><i class="fal fa-envelope"></i></a>
+                  </div>
+                  <div class="offcanvas-contact-text">
+                     <a href="mailto:hello@faimemedia.com">hello@faimemedia.com</a>
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <div class="d-none d-sm-block d-sm-none d-md-block">
+            <div class="fm-offcanvas-social">
+               <span class="social-text">Follow :</span>
+               <div class="fm-offcanvas-social-icon">
+                  <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="overlay"></div>
+
+   <main>
+      <div class="adjust-header-space bg-common-black"></div>
+
+      <!-- Full Width 3D Banner Hero Section -->
+      <section class="products-hero-banner">
+         <!-- Video Background -->
+         <video class="products-hero-video" autoplay muted loop playsinline>
+            <source src="assets/video/video-1.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
+         </video>
+
+         <!-- Overlay -->
+         <div class="products-hero-overlay"></div>
+
+         <!-- Hero Content -->
+         <div class="products-hero-content">
+            <!-- <span class="products-hero-badge">🎬 Signature Collection 2026</span> -->
+            <h1 class="products-hero-title">
+               Engineered for<br>
+               <span>Cinematic Excellence</span>
+            </h1>
+            <p class="products-hero-subtitle">
+               Experience our next-generation production gear, meticulously designed for storytellers who demand premium performance, immersive visuals, and timeless design.
+            </p>
+            <div class="products-hero-cta">
+               <a href="#products-showcase" class="products-hero-btn primary">
+                  Explore Products
+                  <i class="fa-regular fa-arrow-down"></i>
+               </a>
+               <a href="contact.html" class="products-hero-btn secondary">
+                  Request Demo
+                  <i class="fa-regular fa-paper-plane"></i>
+               </a>
+            </div>
+         </div>
+
+         <!-- Scroll Indicator -->
+         <div class="products-hero-scroll">
+            <span></span>
+         </div>
+      </section>
+
+      <section class="products-showcase" id="products-showcase">
+         <div class="container">
+            <div class="product-showcase-list">
+               <article class="product-showcase">
+                  <div class="product-details">
+                     <span class="product-badge"><i class="fa-solid fa-circle"></i> Video Platform</span>
+                     <h3>Cambliss Video Meet</h3>
+                     <p>A professional video conferencing platform designed for seamless virtual meetings, webinars, and collaborative sessions with crystal-clear audio and HD video quality.</p>
+                     <div class="product-meta">
+                        <span>HD Video</span>
+                        <span>Screen Share</span>
+                        <span>Recording</span>
+                     </div>
+                     <div class="product-specs">
+                        <span>Up to 100 Participants</span>
+                        <span>End-to-End Encryption</span>
+                        <span>Cloud Storage</span>
+                     </div>
+                     <div class="product-cta">
+                        <span class="product-price">$3,499</span>
+                        <a href="shop-details.html" class="product-btn">Buy Now <i class="fa-regular fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+                  <div class="product-stage">
+                     <img src="cambliss-video.png" alt="Cambliss Video Meet">
+                  </div>
+               </article>
+
+               <article class="product-showcase">
+                  <div class="product-details">
+                     <span class="product-badge"><i class="fa-solid fa-circle"></i> Web Development</span>
+                     <h3>Weblis</h3>
+                     <p>A comprehensive website development and design solution offering modern, responsive, and user-friendly interfaces tailored to elevate your digital presence and brand identity.</p>
+                     <div class="product-meta">
+                        <span>Responsive Design</span>
+                        <span>Custom Development</span>
+                        <span>SEO Optimized</span>
+                     </div>
+                     <div class="product-specs">
+                        <span>Mobile-First</span>
+                        <span>Fast Loading</span>
+                        <span>CMS Integration</span>
+                     </div>
+                     <div class="product-cta">
+                        <span class="product-price">$4,299</span>
+                        <a href="shop-details.html" class="product-btn">Explore <i class="fa-regular fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+                  <div class="product-stage">
+                     <img src="weblis.png" alt="Webslis">
+                  </div>
+               </article>
+
+               <article class="product-showcase">
+                  <div class="product-details">
+                     <span class="product-badge"><i class="fa-solid fa-circle"></i> Limited Edition</span>
+                     <h3>Nebula Drone Pro</h3>
+                     <p>An aerial platform with cinematic stabilization, 360-degree obstacle sensing, and adaptive flight paths for high-impact storytelling from the sky.</p>
+                     <div class="product-meta">
+                        <span>Active HDR</span>
+                        <span>Whisper Flight</span>
+                        <span>Omni Avoidance</span>
+                     </div>
+                     <div class="product-specs">
+                        <span>45 min Flight</span>
+                        <span>12-bit Color</span>
+                        <span>Foldable</span>
+                     </div>
+                     <div class="product-cta">
+                        <span class="product-price">$5,899</span>
+                        <a href="shop-details.html" class="product-btn">Reserve <i class="fa-regular fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+                  <div class="product-stage">
+                     <img src="assets/img/shop/product3.jpg" alt="Nebula Drone Pro">
+                  </div>
+               </article>
+
+               <article class="product-showcase">
+                  <div class="product-details">
+                     <span class="product-badge"><i class="fa-solid fa-circle"></i> Spatial Audio</span>
+                     <h3>Pulse Audio Engine</h3>
+                     <p>A modular audio workstation delivering immersive mixing, intelligent clean-up, and precision mastering for cinema, broadcast, and XR experiences.</p>
+                     <div class="product-meta">
+                        <span>Dolby Atmos</span>
+                        <span>AI Mix Assist</span>
+                        <span>32-bit Float</span>
+                     </div>
+                     <div class="product-specs">
+                        <span>96kHz / 32-bit</span>
+                        <span>8-Core DSP</span>
+                        <span>Thunderbolt 4</span>
+                     </div>
+                     <div class="product-cta">
+                        <span class="product-price">$2,249</span>
+                        <a href="shop-details.html" class="product-btn">Preorder <i class="fa-regular fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+                  <div class="product-stage">
+                     <img src="assets/img/shop/product4.jpg" alt="Pulse Audio Engine">
+                  </div>
+               </article>
+
+               <article class="product-showcase">
+                  <div class="product-details">
+                     <span class="product-badge"><i class="fa-solid fa-circle"></i> Color Tuned</span>
+                     <h3>Helio Lighting Array</h3>
+                     <p>A lightweight, magnetic lighting system with cinematic color science, pixel-mapped animations, and wireless timecode sync for on-set magic.</p>
+                     <div class="product-meta">
+                        <span>RGBWW</span>
+                        <span>Battery Ready</span>
+                        <span>Pixel Maps</span>
+                     </div>
+                     <div class="product-specs">
+                        <span>2,800 - 10,000K</span>
+                        <span>IP54</span>
+                        <span>DMX / CRMX</span>
+                     </div>
+                     <div class="product-cta">
+                        <span class="product-price">$1,199</span>
+                        <a href="shop-details.html" class="product-btn">Customize <i class="fa-regular fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+                  <div class="product-stage">
+                     <img src="assets/img/shop/product5.jpg" alt="Helio Lighting Array">
+                  </div>
+               </article>
+
+               <article class="product-showcase">
+                  <div class="product-details">
+                     <span class="product-badge"><i class="fa-solid fa-circle"></i> Motion Control</span>
+                     <h3>Orbit Motion Rig</h3>
+                     <p>A robotic camera system enabling repeatable moves, volumetric capture, and real-time virtual production integration with intuitive touch controls.</p>
+                     <div class="product-meta">
+                        <span>Sub-millimeter</span>
+                        <span>Virtual Sync</span>
+                        <span>Robotic Repeat</span>
+                     </div>
+                     <div class="product-specs">
+                        <span>7 Axis</span>
+                        <span>0.01 deg Precision</span>
+                        <span>Unity Live Link</span>
+                     </div>
+                     <div class="product-cta">
+                        <span class="product-price">$12,499</span>
+                        <a href="shop-details.html" class="product-btn">Book Demo <i class="fa-regular fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+                  <div class="product-stage">
+                     <img src="assets/img/shop/product6.jpg" alt="Orbit Motion Rig">
+                  </div>
+               </article>
+
+               <article class="product-showcase">
+                  <div class="product-details">
+                     <span class="product-badge"><i class="fa-solid fa-circle"></i> Ecosystem Core</span>
+                     <h3>Flux Studio Hub</h3>
+                     <p>An intelligent control center orchestrating color, audio, and asset management with collaborative reviews, AI tagging, and adaptive rendering pipelines.</p>
+                     <div class="product-meta">
+                        <span>Cloud Native</span>
+                        <span>Studio Grade</span>
+                        <span>AI Curation</span>
+                     </div>
+                     <div class="product-specs">
+                        <span>Dual M.2 RAID</span>
+                        <span>Thunderbolt 5</span>
+                        <span>8K Ready</span>
+                     </div>
+                     <div class="product-cta">
+                        <span class="product-price">$6,799</span>
+                        <a href="shop-details.html" class="product-btn">Discover <i class="fa-regular fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+                  <div class="product-stage">
+                     <img src="assets/img/shop/product7.jpg" alt="Flux Studio Hub">
+                  </img>
+               </article>
+
+               <article class="product-showcase">
+                  <div class="product-details">
+                     <span class="product-badge"><i class="fa-solid fa-circle"></i> Professional Monitor</span>
+                     <h3>Vista Display Pro</h3>
+                     <p>A 32" reference monitor with HDR mastering capabilities, true 10-bit color, and calibration tools for precise color grading and post-production work.</p>
+                     <div class="product-meta">
+                        <span>4K HDR</span>
+                        <span>Rec. 2020</span>
+                        <span>1000 nits</span>
+                     </div>
+                     <div class="product-specs">
+                        <span>10-bit Panel</span>
+                        <span>DCI-P3 100%</span>
+                        <span>Built-in LUT</span>
+                     </div>
+                     <div class="product-cta">
+                        <span class="product-price">$3,899</span>
+                        <a href="shop-details.html" class="product-btn">View Details <i class="fa-regular fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+                  <div class="product-stage">
+                     <img src="assets/img/shop/product1.jpg" alt="Vista Display Pro">
+                  </div>
+               </article>
+
+               <article class="product-showcase">
+                  <div class="product-details">
+                     <span class="product-badge"><i class="fa-solid fa-circle"></i> Wireless System</span>
+                     <h3>Signal Wireless Kit</h3>
+                     <p>A broadcast-grade wireless video transmission system with zero-latency, encrypted signals, and 4K 60fps streaming for on-location productions.</p>
+                     <div class="product-meta">
+                        <span>Zero Latency</span>
+                        <span>AES-256</span>
+                        <span>4K 60fps</span>
+                     </div>
+                     <div class="product-specs">
+                        <span>500m Range</span>
+                        <span>H.265 HEVC</span>
+                        <span>Auto Switching</span>
+                     </div>
+                     <div class="product-cta">
+                        <span class="product-price">$1,799</span>
+                        <a href="shop-details.html" class="product-btn">Learn More <i class="fa-regular fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+                  <div class="product-stage">
+                     <img src="assets/img/shop/product2.jpg" alt="Signal Wireless Kit">
+                  </div>
+               </article>
+
+               <article class="product-showcase">
+                  <div class="product-details">
+                     <span class="product-badge"><i class="fa-solid fa-circle"></i> Smart Gimbal</span>
+                     <h3>Glide Stabilizer X</h3>
+                     <p>A 3-axis motorized gimbal with AI-powered subject tracking, gesture control, and 12-hour battery life for smooth cinematic movements all day.</p>
+                     <div class="product-meta">
+                        <span>AI Tracking</span>
+                        <span>Gesture Control</span>
+                        <span>12hr Battery</span>
+                     </div>
+                     <div class="product-specs">
+                        <span>8kg Payload</span>
+                        <span>360° Rotation</span>
+                        <span>Quick Release</span>
+                     </div>
+                     <div class="product-cta">
+                        <span class="product-price">$2,499</span>
+                        <a href="shop-details.html" class="product-btn">Shop Now <i class="fa-regular fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+                  <div class="product-stage">
+                     <img src="assets/img/shop/product3.jpg" alt="Glide Stabilizer X">
+                  </div>
+               </article>
+
+            </div>
+         </div>
+      </section>
+
+      <section class="contact-top-area bg-common-black">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <div class="fm-contact-wrapper fm-contact-pad border-0">
+                     <div class="section-title title-anim">
+                        <span class="section-subtitle featured-sub-title">Need A Custom Build?</span>
+                        <h2 class="section-main-title text-white fw-400 mb-15">Craft Your Studio Ecosystem</h2>
+                        <h2 class="section-main-title text-white">Talk With Our Specialists</h2>
+                     </div>
+
+                     <div class="fm-contact-btn btn_wrapper">
+                        <a href="contact.html" class="blog-rotate-btn is-white large btn__item-move">
+                           <span>
+                              <i class="flaticon-right-arrow-1"></i>
+                           </span>
+                        </a>
+                     </div>
+
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+   </main>
+
+   <footer>
+      <div class="footer-area-5 section-spacing-top pos-rel">
+         <div class="footer-bg-3" data-background="assets/img/bg/footer-image-cambliss.png">
+
+         </div>
+         <div class="container">
+            <div class="footer-middle-area">
+
+               <div class="footer-wrapper footer-widget-about">
+                  <div class="footer-logo-2">
+                     <a href="index.html"><img src="assets/img/logo/camblisslogo.webp" alt="" style="width: 180px;"></a>
+                  </div>
+                  <ul class="footer-2-link" style="list-style: none; padding: 0;">
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="about-cambliss.html">About us</a></li>
+                     <li><a href="Services-cambliss.html">Services</a></li>
+                     <li><a href="gallery.html">Gallery</a></li>
+                  </ul>
+               </div>
+               <div class="footer-wrapper footer-widget-gallery">
+                  <div class="footer-title">
+                     <h4>Quick Links</h4>
+                  </div>
+                  <ul class="footer-2-link" style="list-style: none; padding: 0;">
+                     <li><a href="careers.html">Careers</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                     <li><a href="products.html">Products</a></li>
+                     <li><a href="#">Login</a></li>
+                  </ul>
+               </div>
+               <div class="footer-wrapper footer-widget-social">
+                  <div class="footer-title">
+                     <h4>Follow Me</h4>
+                  </div>
+                  <div class="footer-info">
+                     <p>Connect with us on social media</p>
+                  </div>
+                  <div class="fm-social-2 footer-social-3">
+                     <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                     <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                     <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                     <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                  </div>
+               </div>
+               <div class="footer-wrapper footer-widget-contact">
+                  <div class="footer-title">
+                     <h4>Contact Us</h4>
+                  </div>
+                  <ul class="footer-2-link">
+                     <li>
+                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                        <p><a target="_blank"
+                              href="https://www.google.com/maps/place/Survey+No:+75/2,+Balapur(V),+Hyderabad,+Telangana,+500005">Survey No: 75/2, Balapur(V), Hyderabad, Telangana, 500005</a></p>
+                     </li>
+                     <li>
+                        <i class="fa-sharp fa-solid fa-phone"></i>
+                        <p><a href="tel:+918005719799">1800 571 9799</a></p>
+                     </li>
+                     <li>
+                        <i class="fa-sharp fa-solid fa-envelope"></i>
+                        <p><a href="mailto:contact@camblissstudio.com">contact@camblissstudio.com</a></p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer-bottom-4">
+               <div class="footer-bottom-wrapper-2 ">
+                  <div class="footer-bottom-inner">
+                     <div class="footer-copyright">
+                        <p>© 2025 <a href="index.html">CAMBLISS</a> All Rights Reserved.</p>
+                        <p style="margin-top: 5px; font-size: 14px;">CIN : U32100TG2018PTC128985</p>
+                     </div>
+
+
+                     <div class="footer-rules ">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Quality Control</a>
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Refunds and Cancellations</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <script src="assets/js/jquery-3.6.0.min.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/swiper-bundle.min.js"></script>
+   <script src="assets/js/slick.min.js"></script>
+   <script src="assets/js/magnific-popup.min.js"></script>
+   <script src="assets/js/parallax.min.js"></script>
+   <script src="assets/js/gsap.min.js"></script>
+   <script src="assets/js/ScrollTrigger.min.js"></script>
+   <script src="assets/js/ScrollToPlugin.min.js"></script>
+   <script src="assets/js/SplitText.min.js"></script>
+   <script src="assets/js/vanilla-tils.js"></script>
+   <script src="assets/js/knob.min.js"></script>
+   <script src="assets/js/nice-select.min.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/wow.min.js"></script>
+   <script src="assets/js/sidebar.js"></script>
+   <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+   <script src="assets/js/isotope.pkgd.min.js"></script>
+   <script src="assets/js/fontawesome.min.js"></script>
+   <script src="assets/js/ui-range-slider.js"></script>
+   <script src="assets/js/main.js"></script>
+</body>
+
+</html>
