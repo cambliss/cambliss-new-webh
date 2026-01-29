@@ -1,0 +1,751 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Daankar - Donation & Fundraising Platform | Cambliss Studio</title>
+   <meta name="description" content="Daankar: Secure donation and fundraising platform connecting causes with supporters">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/all.min.css">
+   <link rel="stylesheet" href="assets/css/animate.min.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/meanmenu.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/default.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+   <link rel="stylesheet" href="assets/css/flaticon_faime.css">
+
+   <style>
+      body {
+         background: #000000;
+      }
+
+      .daankar-hero {
+         position: relative;
+         min-height: 90vh;
+         background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%);
+         display: flex;
+         align-items: center;
+         padding: 120px 0 80px;
+         overflow: hidden;
+      }
+
+      .daankar-hero::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-image: 
+            radial-gradient(circle at 25% 25%, rgba(255,189,57,0.1) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(255,189,57,0.08) 0%, transparent 50%);
+      }
+
+      .feature-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+         gap: 30px;
+         margin-top: 60px;
+      }
+
+      .feature-card-modern {
+         background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+         padding: 45px 35px;
+         border: 1px solid rgba(255,189,57,0.2);
+         border-top: 4px solid #ffbd39;
+         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+         position: relative;
+         overflow: hidden;
+      }
+
+      .feature-card-modern::after {
+         content: '';
+         position: absolute;
+         bottom: -100%;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: linear-gradient(0deg, rgba(255,189,57,0.1) 0%, transparent 100%);
+         transition: bottom 0.5s;
+      }
+
+      .feature-card-modern:hover::after {
+         bottom: 0;
+      }
+
+      .feature-card-modern:hover {
+         transform: translateY(-15px);
+         border-color: #ffbd39;
+         box-shadow: 0 30px 60px rgba(255,189,57,0.25);
+      }
+
+      .feature-icon {
+         width: 75px;
+         height: 75px;
+         background: rgba(255,189,57,0.15);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-bottom: 25px;
+         transition: all 0.4s;
+         position: relative;
+         z-index: 2;
+         clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+
+      .feature-card-modern:hover .feature-icon {
+         background: rgba(255,189,57,0.3);
+         transform: rotate(45deg) scale(1.1);
+      }
+
+      .pricing-card {
+         background: #0a0a0a;
+         border: 2px solid rgba(255,255,255,0.1);
+         padding: 50px 40px;
+         text-align: center;
+         transition: all 0.3s;
+         height: 100%;
+         position: relative;
+      }
+
+      .pricing-card.featured {
+         border-color: #ffbd39;
+         transform: scale(1.05);
+         background: linear-gradient(135deg, rgba(255,189,57,0.05) 0%, #0a0a0a 100%);
+      }
+
+      .pricing-card.featured::before {
+         content: 'RECOMMENDED';
+         position: absolute;
+         top: 20px;
+         right: -40px;
+         background: #ffbd39;
+         color: #000000;
+         padding: 5px 40px;
+         font-size: 11px;
+         font-weight: 700;
+         transform: rotate(45deg);
+         letter-spacing: 1px;
+      }
+
+      .pricing-card:hover {
+         transform: translateY(-10px);
+         border-color: #ffbd39;
+      }
+
+      .price {
+         font-size: 52px;
+         font-weight: 700;
+         color: #ffbd39;
+         margin: 20px 0;
+      }
+
+      .cta-btn {
+         display: inline-flex;
+         align-items: center;
+         gap: 10px;
+         padding: 15px 40px;
+         background: #ffbd39;
+         color: #ffffff;
+         text-decoration: none;
+         font-weight: 700;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         transition: all 0.3s;
+      }
+
+      .cta-btn:hover {
+         background: #e6a830;
+         transform: translateY(-2px);
+         box-shadow: 0 10px 30px rgba(255,189,57,0.4);
+         color: #ffffff;
+      }
+
+      .cta-btn.secondary {
+         background: transparent;
+         border: 2px solid #ffbd39;
+         color: #ffbd39;
+      }
+
+      .cta-btn.secondary:hover {
+         background: #ffbd39;
+         color: #ffffff;
+      }
+
+      .impact-card {
+         background: rgba(255,189,57,0.05);
+         border: 1px solid rgba(255,189,57,0.2);
+         padding: 40px 30px;
+         text-align: center;
+         transition: all 0.3s;
+      }
+
+      .impact-card:hover {
+         background: rgba(255,189,57,0.1);
+         transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+         .daankar-hero {
+            min-height: 70vh;
+            padding: 80px 0 60px;
+         }
+
+         .hero-content h1 {
+            font-size: 36px !important;
+         }
+
+         .pricing-card.featured {
+            transform: scale(1);
+         }
+      }
+   </style>
+</head>
+
+<body>
+
+   <div class="mouseCursor cursor-outer"></div>
+   <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+   <button id="scroll_top" class="scroll-top">
+      <i class="fa-solid fa-arrow-up"></i>
+   </button>
+
+   <div class="loader">
+      <div class="loader__container">
+         <img class="loader__camera" src="assets/img/loader/camblisspreloader4.webp" alt="img not found" style="height: 150px !important;">
+      </div>
+   </div>
+
+   <header id="header-sticky" class="fm-header-area header-border transparent-header">
+      <div class="container">
+         <div class="row align-items-center justify-content-lg-between">
+            <div class="header-wrapper">
+               <div class="fm-header-logo-wrapper">
+                  <a href="index.html" class="fm-header-logo">
+                     <img src="assets/img/logo/camblisslogo.webp" alt="img not found">
+                  </a>
+                  <span class="separator d-none d-xl-block"></span>
+                  <a href="#0" class="fm-header-bar-1">
+                     <span class="fm-header-bar-line fm-header-bar-line-1"></span>
+                     <span class="fm-header-bar-line fm-header-bar-line-2"></span>
+                     <span class="fm-header-bar-line fm-header-bar-line-3"></span>
+                  </a>
+               </div>
+               <div class="header-menu-spc d-none d-xl-block">
+                  <div class="fm-header-nav">
+                     <nav id="mobile-menu">
+                        <ul>
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="about-cambliss.html">About us</a></li>
+                           <li><a href="Services-cambliss.html">Services</a></li>
+                           <li><a href="gallery.html">Gallery</a></li>
+                           <li><a href="careers.html">Careers</a></li>
+                           <li><a href="contact.html">Contact</a></li>
+                           <li><a href="cambliss-products.html">Products</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+               <div class="fm-header-right d-none d-xl-block">
+                  <a href="contact.html" class="fill-btn">Get Started
+                     <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <div class="fm-header-sidebar-area fm-header-sidebar-left">
+      <div class="fm-header-sidebar-wrapper">
+         <div class="fm-header-sidebar-action mb-65">
+            <div class="fm-header-sidebar-logo">
+               <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo not found"></a>
+            </div>
+            <div class="offcanvas-close">
+               <a class="offcanvas-btn" href="#0">
+                  <i class="fa-thin fa-times"></i>
+               </a>
+            </div>
+         </div>
+         <div class="mobile-menu"></div>
+         <div class="offcanvas-contact mt-30 mb-30">
+            <h4 class="offcanvas-contact-title">Contact Information</h4>
+            <ul>
+               <li class="d-flex align-items-center gap-2">
+                  <div class="offcanvas-contact-icon">
+                     <a href="tel:+918005719799"><i class="far fa-phone"></i></a>
+                  </div>
+                  <div class="offcanvas-contact-text">
+                     <a href="tel:+918005719799">1800 571 9799</a>
+                  </div>
+               </li>
+               <li class="d-flex align-items-center gap-2">
+                  <div class="offcanvas-contact-icon">
+                     <a href="mailto:contact@camblissstudio.com"><i class="fal fa-envelope"></i></a>
+                  </div>
+                  <div class="offcanvas-contact-text">
+                     <a href="mailto:contact@camblissstudio.com">contact@camblissstudio.com</a>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="overlay"></div>
+
+   <main>
+      <div class="adjust-header-space bg-common-black"></div>
+
+      <!-- Hero Section -->
+      <section class="daankar-hero">
+         <div class="container" style="position: relative; z-index: 2;">
+            <div class="row align-items-center">
+               <div class="col-lg-6">
+                  <div class="hero-content">
+                     <span style="color: #ffbd39; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; display: inline-block; padding: 8px 20px; background: rgba(255,189,57,0.1); margin-bottom: 20px;">
+                        <i class="fa-solid fa-hand-holding-heart" style="margin-right: 8px;"></i>
+                        Donation & Fundraising Platform
+                     </span>
+                     <h1 style="color: #ffffff; font-size: 56px; font-weight: 700; line-height: 1.2; margin-bottom: 25px;">
+                        Empower Change<br>
+                        Through <span style="color: #ffbd39;">Giving</span>
+                     </h1>
+                     <p style="color: rgba(255,255,255,0.7); font-size: 18px; line-height: 1.8; margin-bottom: 40px;">
+                        Daankar is a secure and transparent donation platform that connects donors with causes they care about. Support NGOs, charities, and individuals making a difference in the world.
+                     </p>
+                     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <a href="contact.html" class="cta-btn">
+                           Start Fundraising
+                           <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#features" class="cta-btn secondary">
+                           Explore Platform
+                           <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div style="position: relative; padding: 50px;">
+                     <div style="position: absolute; top: 20px; right: 20px; width: 250px; height: 250px; background: rgba(255,189,57,0.1); border: 2px solid rgba(255,189,57,0.3);"></div>
+                     <div style="position: absolute; bottom: 20px; left: 20px; width: 200px; height: 200px; background: rgba(255,189,57,0.08); border: 2px solid rgba(255,189,57,0.25);"></div>
+                     <img src="assets/img/blog/blog-2.jpg" alt="Daankar Platform" style="width: 100%; position: relative; z-index: 2; border: 2px solid rgba(255,189,57,0.3);">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Impact Section -->
+      <section style="background: #ffbd39; padding: 80px 0;">
+         <div class="container">
+            <div class="row text-center" style="row-gap: 30px;">
+               <div class="col-lg-3 col-6">
+                  <h3 style="font-size: 48px; font-weight: 700; color: #000000; margin-bottom: 10px;">₹100Cr+</h3>
+                  <p style="color: rgba(0,0,0,0.7); font-size: 16px; margin: 0;">Funds Raised</p>
+               </div>
+               <div class="col-lg-3 col-6">
+                  <h3 style="font-size: 48px; font-weight: 700; color: #000000; margin-bottom: 10px;">50K+</h3>
+                  <p style="color: rgba(0,0,0,0.7); font-size: 16px; margin: 0;">Active Campaigns</p>
+               </div>
+               <div class="col-lg-3 col-6">
+                  <h3 style="font-size: 48px; font-weight: 700; color: #000000; margin-bottom: 10px;">5M+</h3>
+                  <p style="color: rgba(0,0,0,0.7); font-size: 16px; margin: 0;">Donors</p>
+               </div>
+               <div class="col-lg-3 col-6">
+                  <h3 style="font-size: 48px; font-weight: 700; color: #000000; margin-bottom: 10px;">10K+</h3>
+                  <p style="color: rgba(0,0,0,0.7); font-size: 16px; margin: 0;">NGOs & Charities</p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" style="background: #000000; padding: 120px 0;">
+         <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+               <span style="color: #ffbd39; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; display: inline-block; padding: 8px 20px; background: rgba(255,189,57,0.1);">Platform Features</span>
+               <h2 style="color: #ffffff; font-size: 48px; font-weight: 700; line-height: 1.2; margin: 20px 0;">
+                  Tools Built for<br>
+                  Transparent Giving
+               </h2>
+            </div>
+
+            <div class="feature-grid">
+               <div class="feature-card-modern">
+                  <div class="feature-icon">
+                     <i class="fa-solid fa-shield-check" style="color: #ffbd39; font-size: 30px;"></i>
+                  </div>
+                  <h4 style="color: #ffffff; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Secure Donations</h4>
+                  <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0;">
+                     Bank-grade encryption and PCI-DSS compliance ensure all transactions are safe and secure.
+                  </p>
+               </div>
+
+               <div class="feature-card-modern">
+                  <div class="feature-icon">
+                     <i class="fa-solid fa-eye" style="color: #ffbd39; font-size: 30px;"></i>
+                  </div>
+                  <h4 style="color: #ffffff; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Full Transparency</h4>
+                  <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0;">
+                     Track exactly how your donations are being used with detailed reports and updates.
+                  </p>
+               </div>
+
+               <div class="feature-card-modern">
+                  <div class="feature-icon">
+                     <i class="fa-solid fa-credit-card" style="color: #ffbd39; font-size: 30px;"></i>
+                  </div>
+                  <h4 style="color: #ffffff; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Multiple Payment Options</h4>
+                  <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0;">
+                     Accept donations via UPI, cards, net banking, wallets, and international payments.
+                  </p>
+               </div>
+
+               <div class="feature-card-modern">
+                  <div class="feature-icon">
+                     <i class="fa-solid fa-file-invoice" style="color: #ffbd39; font-size: 30px;"></i>
+                  </div>
+                  <h4 style="color: #ffffff; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Tax Receipts</h4>
+                  <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0;">
+                     Automatic 80G tax receipt generation for Indian donors with instant email delivery.
+                  </p>
+               </div>
+
+               <div class="feature-card-modern">
+                  <div class="feature-icon">
+                     <i class="fa-solid fa-repeat" style="color: #ffbd39; font-size: 30px;"></i>
+                  </div>
+                  <h4 style="color: #ffffff; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Recurring Donations</h4>
+                  <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0;">
+                     Set up monthly or yearly recurring donations to support causes continuously.
+                  </p>
+               </div>
+
+               <div class="feature-card-modern">
+                  <div class="feature-icon">
+                     <i class="fa-solid fa-share-nodes" style="color: #ffbd39; font-size: 30px;"></i>
+                  </div>
+                  <h4 style="color: #ffffff; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Social Sharing</h4>
+                  <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0;">
+                     Amplify your campaign reach with built-in social media sharing and viral tools.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Categories Section -->
+      <section style="background: #0a0a0a; padding: 120px 0;">
+         <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+               <span style="color: #ffbd39; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; display: inline-block; padding: 8px 20px; background: rgba(255,189,57,0.1);">Causes We Support</span>
+               <h2 style="color: #ffffff; font-size: 48px; font-weight: 700; line-height: 1.2; margin: 20px 0;">
+                  Make an Impact in<br>
+                  Areas That Matter
+               </h2>
+            </div>
+
+            <div class="row" style="row-gap: 25px;">
+               <div class="col-lg-4 col-md-6">
+                  <div class="impact-card">
+                     <i class="fa-solid fa-graduation-cap" style="color: #ffbd39; font-size: 42px; margin-bottom: 20px;"></i>
+                     <h5 style="color: #ffffff; font-size: 20px; font-weight: 700; margin-bottom: 10px;">Education</h5>
+                     <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin: 0;">Support students, schools, and literacy programs</p>
+                  </div>
+               </div>
+
+               <div class="col-lg-4 col-md-6">
+                  <div class="impact-card">
+                     <i class="fa-solid fa-heart-pulse" style="color: #ffbd39; font-size: 42px; margin-bottom: 20px;"></i>
+                     <h5 style="color: #ffffff; font-size: 20px; font-weight: 700; margin-bottom: 10px;">Healthcare</h5>
+                     <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin: 0;">Fund medical treatments and health initiatives</p>
+                  </div>
+               </div>
+
+               <div class="col-lg-4 col-md-6">
+                  <div class="impact-card">
+                     <i class="fa-solid fa-hand-holding-dollar" style="color: #ffbd39; font-size: 42px; margin-bottom: 20px;"></i>
+                     <h5 style="color: #ffffff; font-size: 20px; font-weight: 700; margin-bottom: 10px;">Poverty Relief</h5>
+                     <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin: 0;">Help families and communities in need</p>
+                  </div>
+               </div>
+
+               <div class="col-lg-4 col-md-6">
+                  <div class="impact-card">
+                     <i class="fa-solid fa-leaf" style="color: #ffbd39; font-size: 42px; margin-bottom: 20px;"></i>
+                     <h5 style="color: #ffffff; font-size: 20px; font-weight: 700; margin-bottom: 10px;">Environment</h5>
+                     <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin: 0;">Support climate action and conservation</p>
+                  </div>
+               </div>
+
+               <div class="col-lg-4 col-md-6">
+                  <div class="impact-card">
+                     <i class="fa-solid fa-paw" style="color: #ffbd39; font-size: 42px; margin-bottom: 20px;"></i>
+                     <h5 style="color: #ffffff; font-size: 20px; font-weight: 700; margin-bottom: 10px;">Animal Welfare</h5>
+                     <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin: 0;">Care for abandoned and rescued animals</p>
+                  </div>
+               </div>
+
+               <div class="col-lg-4 col-md-6">
+                  <div class="impact-card">
+                     <i class="fa-solid fa-hand-holding-medical" style="color: #ffbd39; font-size: 42px; margin-bottom: 20px;"></i>
+                     <h5 style="color: #ffffff; font-size: 20px; font-weight: 700; margin-bottom: 10px;">Disaster Relief</h5>
+                     <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin: 0;">Emergency response and rehabilitation</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section style="background: #000000; padding: 120px 0;">
+         <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+               <span style="color: #ffbd39; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; display: inline-block; padding: 8px 20px; background: rgba(255,189,57,0.1);">Transparent Pricing</span>
+               <h2 style="color: #ffffff; font-size: 48px; font-weight: 700; line-height: 1.2; margin: 20px 0;">
+                  Start Raising Funds Today
+               </h2>
+            </div>
+
+            <div class="row justify-content-center" style="row-gap: 30px;">
+               <div class="col-lg-4 col-md-6">
+                  <div class="pricing-card">
+                     <h3 style="color: #ffffff; font-size: 24px; font-weight: 700; margin-bottom: 10px;">Individual</h3>
+                     <p style="color: rgba(255,255,255,0.5); font-size: 14px;">For personal causes</p>
+                     <div class="price">0%<span style="font-size: 18px; color: rgba(255,255,255,0.5);"> + 3%</span></div>
+                     <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin-bottom: 30px;">Platform fee + Payment gateway</p>
+                     <ul style="list-style: none; padding: 0; margin: 30px 0;">
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> Personal Campaigns
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> Unlimited Duration
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> Social Sharing
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> Basic Support
+                        </li>
+                     </ul>
+                     <a href="contact.html" class="cta-btn secondary" style="width: 100%; justify-content: center;">
+                        Start Campaign
+                     </a>
+                  </div>
+               </div>
+
+               <div class="col-lg-4 col-md-6">
+                  <div class="pricing-card featured">
+                     <h3 style="color: #ffffff; font-size: 24px; font-weight: 700; margin-bottom: 10px;">NGO / Charity</h3>
+                     <p style="color: rgba(255,255,255,0.5); font-size: 14px;">For registered organizations</p>
+                     <div class="price">2%<span style="font-size: 18px; color: rgba(255,255,255,0.5);"> + 3%</span></div>
+                     <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin-bottom: 30px;">Platform fee + Payment gateway</p>
+                     <ul style="list-style: none; padding: 0; margin: 30px 0;">
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> Unlimited Campaigns
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> 80G Tax Receipts
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> Recurring Donations
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> Custom Branding
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> Priority Support
+                        </li>
+                     </ul>
+                     <a href="contact.html" class="cta-btn" style="width: 100%; justify-content: center;">
+                        Register NGO
+                     </a>
+                  </div>
+               </div>
+
+               <div class="col-lg-4 col-md-6">
+                  <div class="pricing-card">
+                     <h3 style="color: #ffffff; font-size: 24px; font-weight: 700; margin-bottom: 10px;">Enterprise</h3>
+                     <p style="color: rgba(255,255,255,0.5); font-size: 14px;">For large institutions</p>
+                     <div class="price">Custom</div>
+                     <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin-bottom: 30px;">Flexible pricing options</p>
+                     <ul style="list-style: none; padding: 0; margin: 30px 0;">
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> Everything in NGO Plan
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> White Label Platform
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> API Access
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> Custom Integrations
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">
+                           <i class="fa-solid fa-check" style="color: #ffbd39; margin-right: 10px;"></i> Dedicated Manager
+                        </li>
+                     </ul>
+                     <a href="contact.html" class="cta-btn secondary" style="width: 100%; justify-content: center;">
+                        Contact Sales
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section style="background: linear-gradient(135deg, #ffbd39 0%, #e6a830 100%); padding: 100px 0;">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-lg-8">
+                  <h2 style="color: #000000; font-size: 48px; font-weight: 700; line-height: 1.2; margin-bottom: 20px;">
+                     Ready to Make a Difference?
+                  </h2>
+                  <p style="color: rgba(0,0,0,0.7); font-size: 18px; max-width: 600px;">
+                     Start your fundraising campaign today or donate to causes you believe in. Every contribution counts.
+                  </p>
+               </div>
+               <div class="col-lg-4 text-lg-end" style="margin-top: 30px;">
+                  <a href="contact.html" style="display: inline-flex; align-items: center; gap: 15px; padding: 20px 45px; background: #000000; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s;" onmouseover="this.style.background='#1a1a1a';" onmouseout="this.style.background='#000000';">
+                     Get Started Now
+                     <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+
+   </main>
+
+   <footer>
+      <div class="footer-area-5 section-spacing-top pos-rel">
+         <div class="footer-bg-3" data-background="assets/img/bg/footer-image-cambliss.png"></div>
+         <div class="container">
+            <div class="footer-middle-area">
+               <div class="footer-wrapper footer-widget-about">
+                  <div class="footer-logo-2">
+                     <a href="index.html"><img src="assets/img/logo/camblisslogo.webp" alt="" style="width: 180px;"></a>
+                  </div>
+                  <ul class="footer-2-link" style="list-style: none; padding: 0;">
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="about-cambliss.html">About us</a></li>
+                     <li><a href="Services-cambliss.html">Services</a></li>
+                     <li><a href="gallery.html">Gallery</a></li>
+                  </ul>
+               </div>
+               <div class="footer-wrapper footer-widget-gallery">
+                  <div class="footer-title">
+                     <h4>Quick Links</h4>
+                  </div>
+                  <ul class="footer-2-link" style="list-style: none; padding: 0;">
+                     <li><a href="careers.html">Careers</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                     <li><a href="cambliss-products.html">Products</a></li>
+                     <li><a href="#">Login</a></li>
+                  </ul>
+               </div>
+               <div class="footer-wrapper footer-widget-social">
+                  <div class="footer-title">
+                     <h4>Follow Me</h4>
+                  </div>
+                  <div class="footer-info">
+                     <p>Connect with us on social media</p>
+                  </div>
+                  <div class="fm-social-2 footer-social-3">
+                     <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                     <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                     <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                     <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                  </div>
+               </div>
+               <div class="footer-wrapper footer-widget-contact">
+                  <div class="footer-title">
+                     <h4>Contact Us</h4>
+                  </div>
+                  <ul class="footer-2-link">
+                     <li>
+                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                        <p><a target="_blank" href="https://www.google.com/maps/place/Survey+No:+75/2,+Balapur(V),+Hyderabad,+Telangana,+500005">Survey No: 75/2, Balapur(V), Hyderabad, Telangana, 500005</a></p>
+                     </li>
+                     <li>
+                        <i class="fa-sharp fa-solid fa-phone"></i>
+                        <p><a href="tel:+918005719799">1800 571 9799</a></p>
+                     </li>
+                     <li>
+                        <i class="fa-sharp fa-solid fa-envelope"></i>
+                        <p><a href="mailto:contact@camblissstudio.com">contact@camblissstudio.com</a></p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer-bottom-4">
+               <div class="footer-bottom-wrapper-2">
+                  <div class="footer-bottom-inner">
+                     <div class="footer-copyright">
+                        <p>© 2025 <a href="index.html">CAMBLISS</a> All Rights Reserved.</p>
+                        <p style="margin-top: 5px; font-size: 14px;">CIN : U32100TG2018PTC128985</p>
+                     </div>
+                     <div class="footer-rules">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Quality Control</a>
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Refunds and Cancellations</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <script src="assets/js/jquery-3.6.0.min.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/swiper-bundle.min.js"></script>
+   <script src="assets/js/slick.min.js"></script>
+   <script src="assets/js/magnific-popup.min.js"></script>
+   <script src="assets/js/parallax.min.js"></script>
+   <script src="assets/js/gsap.min.js"></script>
+   <script src="assets/js/ScrollTrigger.min.js"></script>
+   <script src="assets/js/ScrollToPlugin.min.js"></script>
+   <script src="assets/js/SplitText.min.js"></script>
+   <script src="assets/js/vanilla-tils.js"></script>
+   <script src="assets/js/knob.min.js"></script>
+   <script src="assets/js/nice-select.min.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/wow.min.js"></script>
+   <script src="assets/js/sidebar.js"></script>
+   <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+   <script src="assets/js/isotope.pkgd.min.js"></script>
+   <script src="assets/js/fontawesome.min.js"></script>
+   <script src="assets/js/ui-range-slider.js"></script>
+   <script src="assets/js/main.js"></script>
+
+   <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+         anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+               target.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+               });
+            }
+         });
+      });
+   </script>
+</body>
+
+</html>
